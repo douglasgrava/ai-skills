@@ -10,5 +10,5 @@ Analise o arquivo erp-mobile-parent/.junie/dicionario-mobile.md e proponha uma v
 
 2.  **Contexto e Restrições (Opcional):**
 
-**Instruções de Saída:**
+**Instruções de Saída:** 
 Siga o fluxo de execução da Skill e gere a resposta final em markdown utilizando o formato do `assets/template-sintese-final.md`.
