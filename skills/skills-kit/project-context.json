@@ -1,0 +1,108 @@
+{
+  "$schema": "./project-context.schema.json",
+
+  "_comment": "Fill this file with your project's details. Skills read this to adapt to your app.",
+
+  "name": "My Project",
+  "description": "Brief description of your product (used in AI design critique prompts)",
+  "productCategory": "web-app",
+
+  "baseUrl": "http://localhost:3000",
+  "settleDelay": 800,
+
+  "techStack": ["React", "Tailwind CSS", "Node.js"],
+
+  "benchmarkProducts": [
+    "Linear",
+    "Vercel Dashboard",
+    "Raycast"
+  ],
+
+  "views": [
+    {
+      "name": "Dashboard",
+      "navigate": { "shortcut": "Meta+1" },
+      "waitAfter": 600,
+      "context": "Main landing view. First impression — should communicate purpose and guide first action."
+    },
+    {
+      "name": "Settings",
+      "navigate": { "url": "/settings" },
+      "waitAfter": 600,
+      "context": "Configuration interface. Scannability and clarity are paramount."
+    }
+  ],
+
+  "transitions": [
+    {
+      "name": "page-switch-1-to-2",
+      "setup": { "shortcut": "Meta+1" },
+      "trigger": { "shortcut": "Meta+2" },
+      "expectedDurationMs": "150-300",
+      "setupWait": 400,
+      "captureDuration": 600
+    }
+  ],
+
+  "floatingUI": {
+    "enabled": false,
+    "selector": null,
+    "description": null,
+    "settleDelay": 0
+  },
+
+  "darkMode": {
+    "enabled": true,
+    "toggle": {
+      "selector": "[data-theme-toggle], [aria-label*='theme']",
+      "fallback": {
+        "commandPalette": true,
+        "searchTerm": "dark"
+      }
+    }
+  },
+
+  "reportTitle": "My Project UI",
+
+  "phaseTests": {
+    "_comment": "Define project-specific E2E test phases here. Each phase is an array of test definitions.",
+    "example": [
+      {
+        "name": "Layout Structure",
+        "action": "Navigate to app root",
+        "verify": "Main content area renders correctly",
+        "evidence": "Full page screenshot"
+      }
+    ]
+  },
+
+  "narrativeConfig": {
+    "_comment": "For ux-screenwriter skill. Define your product's narrative elements.",
+    "protagonistArchetypes": [
+      {
+        "name": "The User",
+        "motivation": "Accomplish their primary task efficiently",
+        "fear": "Wasting time, confusion",
+        "resource": "Domain knowledge"
+      }
+    ],
+    "aiCharacter": {
+      "enabled": false,
+      "name": "AI Assistant",
+      "role": "Helper / co-pilot",
+      "personality": "Collaborative, contextually aware"
+    },
+    "storyWorld": {
+      "description": "Describe the conceptual world your user inhabits when using your product",
+      "hierarchy": []
+    },
+    "primaryJourneys": [
+      {
+        "name": "First-time setup",
+        "arcType": "Linear, Act 0 → Act 1",
+        "keyTests": ["What Happens Next?", "Emotional Arc"],
+        "typicalDuration": "5-15 min"
+      }
+    ]
+  }
+}
